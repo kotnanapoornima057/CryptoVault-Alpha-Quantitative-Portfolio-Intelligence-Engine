@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ledger Operations - Crypto Vault Alpha</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css"
+href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <span class="logo-icon">Ξ</span>
+      <h2>CryptoVault <span>Alpha</span></h2>
+    </div>
+
+    <nav class="nav-links">
+      
+    <a href="index.html">Dashboard</a>
+    <a href="transactions.html">Ledger Operations</a>
+    <a href="tax-reports.html">Tax Analytics</a>
+    <a href="risk-management.html">Risk Management</a>
+    <a href="advisor.html">AI Advisor</a>
+    <a href="performance.html">Performance</a>
+    <a href="ai-chat.html">
+    AI Chat
+</a>
+    <button id="logoutBtn" class="logout-btn">
+    Logout
+    </button>
+
+    </nav>
+
+    <div class="auth-context">
+
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+
+</div>
+  </header>
+
+  <main class="dashboard">
+
+    <section class="content-split reverse">
+
+      <!-- Transaction Form -->
+      <div class="tax glass">
+
+        <h3>Ingest Tranche Transaction</h3>
+
+        <form id="transaction-form" class="complex-form">
+              <input type="hidden" id="transaction-id" />
+
+          <div class="form-group">
+            <label>Cryptocurrency Symbol</label>
+
+            <select id="tx-asset-symbol" required>
+              <option value="">-- Choose Target Token Asset --</option>
+              <option value="BTC">Bitcoin (BTC)</option>
+              <option value="ETH">Ethereum (ETH)</option>
+              <option value="SOL">Solana (SOL)</option>
+              <option value="MATIC">Polygon (MATIC)</option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Operational Action Type</label>
+
+            <select id="tx-operation-type" required>
+              <option value="BUY">BUY (Acquire Capital Asset Lot)</option>
+              <option value="SELL">SELL (Liquidate Downstream Tranche)</option>
+            </select>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label>Token Amount Volume</label>
+
+              <input
+                type="number"
+                step="0.00000001"
+                min="0.00000001"
+                id="tx-quantity"
+                placeholder="0.00000000"
+                required
+              />
+
+            </div>
+
+            <div class="form-group">
+
+              <label>Execution Price per Unit (USD)</label>
+
+              <input
+                type="number"
+                step="0.01"
+                min="0.01"
+                id="tx-price"
+                placeholder="0.00"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label>Slippage / Network Execution Fee</label>
+
+              <input
+                type="number"
+                step="0.01"
+                min="0"
+                id="tx-fees"
+                placeholder="0.00"
+                required
+              />
+
+            </div>
+
+            <div class="form-group">
+
+              <label>Timestamp Metric</label>
+
+              <input
+                type="datetime-local"
+                id="tx-timestamp"
+                required
+              />
+
+            </div>
+
+          </div>
+
+          <button
+            type="submit"
+            class="btn-primary"
+            id="submit-transaction-btn">
+            Add Transaction
+          </button>
+        </form>
+
+      </div>
+
+      <!-- Transaction History -->
+      <div class="portfolio glass">
+
+        <div class="panel-header">
+
+          <h3>Historical Asset Transactions Audit Log</h3>
+
+          <div class="filter-actions">
+
+              <input
+                  type="text"
+                  id="search-transaction"
+                  placeholder="Search by Asset (BTC, ETH...)"
+                  class="search-box"
+              />
+
+                <button
+                    class="btn-sm btn-outline"
+                    id="btn-export-csv">
+                    Export CSV
+                </button>
+
+          </div>
+
+        </div>
+
+        <table id="transaction-history-table">
+
+          <thead>
+
+            <tr>
+              <th>Unique Transaction Identifier</th>
+              <th>Timestamp</th>
+              <th>Asset</th>
+              <th>Action</th>
+              <th>Size Delta</th>
+              <th>Value Basis</th>
+              <th>Operational Fees</th>
+              <th>System Status</th>
+              <th>Actions</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="transaction-history">
+
+          <tr>
+
+          <td colspan="9">
+
+          <div class="skeleton skeleton-card"></div>
+
+          </td>
+
+          </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>

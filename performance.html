@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Performance Analytics - CryptoVault Alpha</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <span class="logo-icon">Ξ</span>
+
+            <h2>CryptoVault <span>Alpha</span></h2>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html">Ledger Operations</a>
+            <a href="tax-reports.html">Tax Analytics</a>
+            <a href="risk-management.html">Risk Management</a>
+            <a href="advisor.html">AI Advisor</a>
+            <a href="performance.html">Performance</a>
+            <a href="ai-chat.html">AI Chat</a>
+            <button id="logoutBtn" class="logout-btn">
+            Logout
+            </button>
+        </nav>
+        <div class="auth-context">
+
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+
+</div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard">
+
+        <!-- Summary Cards -->
+
+        <section class="metrics-grid">
+
+            <div class="metric-card">
+
+                <h3>Total Investment</h3>
+
+                <h1 id="totalInvestment">$0.00</h1>
+
+                <p>Total capital invested</p>
+
+            </div>
+
+            <div class="metric-card">
+
+                <h3>Current Portfolio Value</h3>
+
+                <h1 id="currentValue">$0.00</h1>
+
+                <p>Live market valuation</p>
+
+            </div>
+
+            <div class="metric-card">
+
+                <h3>Total Profit / Loss</h3>
+
+                <h1 id="profitLoss">$0.00</h1>
+
+                <p>Unrealized Profit/Loss</p>
+
+            </div>
+
+            <div class="metric-card">
+
+                <h3>Portfolio Return</h3>
+
+                <h1 id="returnPercentage">0%</h1>
+
+                <p>Overall ROI</p>
+
+            </div>
+
+        </section>
+
+        <!-- Growth Chart -->
+
+        <section class="glass">
+
+            <div class="panel-header" class="metric-card">
+
+                <h2>Portfolio Growth</h2>
+
+            </div>
+
+            <canvas id="growthChart" height="120"></canvas>
+
+        </section>
+
+        <br>
+
+        <!-- Two Charts -->
+
+        <section class="content-split">
+
+            <div class="glass">
+
+                <div class="panel-header">
+
+                    <h2>Asset Allocation</h2>
+
+                </div>
+
+                <canvas id="allocationChart"></canvas>
+
+            </div>
+
+            <div class="glass">
+
+                <div class="panel-header">
+
+                    <h2>Investment vs Current Value</h2>
+
+                </div>
+
+                <canvas id="comparisonChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <!-- Performance Table -->
+
+        <section class="glass">
+
+            <div class="panel-header">
+
+                <h2>Performance Insights</h2>
+
+            </div>
+
+            <table class="asset-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Metric</th>
+                        <th>Value</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Best Performing Asset</td>
+
+                        <td id="bestAsset">--</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Worst Performing Asset</td>
+
+                        <td id="worstAsset">--</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Highest Allocation</td>
+
+                        <td id="highestAllocation">--</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Lowest Allocation</td>
+
+                        <td id="lowestAllocation">--</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

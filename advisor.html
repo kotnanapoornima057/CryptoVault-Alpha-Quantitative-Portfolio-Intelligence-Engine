@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Portfolio Advisor - CryptoVault Alpha</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <span class="logo-icon">Ξ</span>
+
+            <h2>CryptoVault <span>Alpha</span></h2>
+
+        </div>
+
+        <nav class="nav-links">
+
+                <a href="index.html">Dashboard</a>
+                <a href="transactions.html">Ledger Operations</a>
+                <a href="tax-reports.html">Tax Analytics</a>
+                <a href="risk-management.html">Risk Management</a>
+                <a href="advisor.html">AI Advisor</a>
+                <a href="performance.html">Performance</a>
+                <a href="ai-chat.html">
+                    AI Chat
+                </a>
+                <button id="logoutBtn" class="logout-btn">
+                Logout
+                </button>
+        </nav>
+
+        <div class="auth-context">
+
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+
+</div>
+    </header>
+
+    <!-- Main Content -->
+
+    <main class="dashboard">
+
+        <section class="content-split">
+
+            <div class="glass">
+
+                <div class="panel-header">
+
+                    <h2>AI Smart Portfolio Advisor</h2>
+
+                </div>
+
+                <p style="margin-bottom:20px; color:#cccccc;">
+
+                    Personalized portfolio recommendations based on
+                    investment allocation, unrealized profit/loss,
+                    diversification and portfolio concentration.
+
+                </p>
+
+                <div id="advisor-container" class="metric-card">
+
+                    <div class="placeholder-row" >
+
+                        <div class="loader"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

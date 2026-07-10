@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CryptoVault AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <span class="logo-icon">Ξ</span>
+
+            <h2>CryptoVault <span>Alpha</span></h2>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Dashboard</a>
+
+            <a href="transactions.html">Ledger Operations</a>
+
+            <a href="tax-reports.html">Tax Analytics</a>
+
+            <a href="risk-management.html">Risk Management</a>
+
+            <a href="advisor.html">AI Advisor</a>
+
+            <a href="performance.html">Performance</a>
+
+            <a href="ai-chat.html" class="active">AI Chat</a>
+
+            <button
+                class="logout-btn"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+            <button
+                class="theme-btn"
+                onclick="toggleTheme()">
+
+                🌙 Dark
+
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="dashboard">
+
+        <div class="ai-chat-layout">
+
+            <!-- ================= LEFT PANEL ================= -->
+
+            <aside class="history-panel">
+
+                <h3>💬 Previous Chats</h3>
+
+                <div id="historyList"></div>
+
+            </aside>
+
+            <!-- ================= RIGHT PANEL ================= -->
+
+            <section class="chat-panel">
+
+                <!-- Header -->
+
+                <div class="chat-header">
+
+                    <h2>🤖 CryptoVault AI Assistant</h2>
+
+                    <p>
+                        Ask anything about your portfolio.
+                    </p>
+
+                </div>
+
+                <!-- Chat Window -->
+
+                <div
+                    id="chatWindow"
+                    class="chat-window">
+
+                </div>
+
+                <!-- Input -->
+
+                <div class="chat-input">
+
+                    <textarea
+                        id="question"
+                        placeholder="Ask anything about your portfolio..."></textarea>
+
+                    <!-- Voice -->
+
+                    <button
+                        id="voiceButton"
+                        class="voice-btn"
+                        onclick="voiceAction()"
+                        title="Voice Assistant">
+
+                        🎤
+
+                    </button>
+
+                    <!-- Stop Voice -->
+
+                    <button
+                        id="stopVoiceButton"
+                        class="stop-btn"
+                        onclick="stopSpeaking()"
+                        title="Stop Speaking">
+
+                        ⏹
+
+                    </button>
+
+                    <!-- Send -->
+
+                    <button
+                        class="btn-primary"
+                        onclick="askAI()">
+
+                        Send
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- Markdown Parser -->
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

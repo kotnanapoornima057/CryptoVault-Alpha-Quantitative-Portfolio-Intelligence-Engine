@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tax Analytics Ledger - Crypto Vault Alpha</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <span class="logo-icon">Ξ</span>
+      <h2>CryptoVault <span>Alpha</span></h2>
+    </div>
+    <nav class="nav-links">
+    <a href="index.html">Dashboard</a>
+    <a href="transactions.html">Ledger Operations</a>
+    <a href="tax-reports.html">Tax Analytics</a>
+    <a href="risk-management.html">Risk Management</a>
+    <a href="advisor.html">AI Advisor</a>
+    <a href="performance.html">Performance</a>
+    <a href="ai-chat.html">
+    AI Chat
+</a>
+    <button id="logoutBtn" class="logout-btn">
+    Logout
+</button>
+    </nav>
+    <div class="auth-context">
+
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+
+</div>
+  </header>
+
+  <main class="dashboard">
+    <section class="content-split">
+      
+      <div class="portfolio glass" style="grid-column: span 2;">
+        <div class="panel-header">
+
+    <h3>Realized Capital Gains Compliance Ledger</h3>
+
+    <button
+        id="exportPdfBtn"
+        class="btn-primary">
+
+        Export PDF
+
+    </button>
+
+    <div class="selector-container">
+
+        <label for="report-method-select">
+
+            Active Accounting Method Context:
+
+        </label>
+
+        <select
+            id="report-method-select"
+            class="inline-select">
+
+            <option value="FIFO">FIFO</option>
+
+            <option value="LIFO">LIFO</option>
+
+            <option value="HIFO">HIFO</option>
+
+        </select>
+
+    </div>
+
+</div>
+        </div>
+
+        <div class="stats-subgrid" id="capital-gains-summary" >
+          <div class="sub-card" >
+            <p>Short-Term Capital Gains (< 1 Year Holding)</p>
+            <h3 id="st-gains" class="text-white">$0.00</h3>
+          </div>
+          <div class="sub-card">
+            <p>Long-Term Capital Gains (≥ 1 Year Holding)</p>
+            <h3 id="lt-gains" class="text-green">$0.00</h3>
+          </div>
+          <div class="sub-card">
+            <p>Wash Sale Deferred Disallowances</p>
+            <h3 id="wash-sales-deferred" class="text-red">$0.00</h3>
+          </div>
+          <div class="sub-card">
+            <p>Net Realized P/L Taxable Total</p>
+            <h3 id="net-taxable-gains" class="text-white">$0.00</h3>
+          </div>
+        </div>
+
+        <div class="panel-header" style="margin-top: 30px;">
+          <h4>Asset Unwinding Queue: Dissected Disposal Lots</h4>
+        </div>
+        <table id="disposal-lots-table">
+          <thead>
+            <tr>
+              <th>Lot ID</th>
+              <th>Asset Target</th>
+              <th>Acquisition Origin Date</th>
+              <th>Disposal Date</th>
+              <th>Proceeds Realized</th>
+              <th>Calculated Cost Basis</th>
+              <th>Matched Gain/Loss</th>
+              <th>Holding Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="placeholder-row">
+              <td colspan="8" style="text-align: center; color: rgba(255,255,255,0.4);">
+                Select valuation strategy above to trigger complete historical batch calculation.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

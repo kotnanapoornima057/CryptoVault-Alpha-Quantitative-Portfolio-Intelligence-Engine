@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Vault Alpha - Portfolio Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <span class="logo-icon">Ξ</span>
+      <h2>CryptoVault <span>Alpha</span></h2>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="transactions.html">Ledger Operations</a>
+      <a href="tax-reports.html">Tax Analytics</a>
+      <a href="risk-management.html">Risk Management</a>
+      <a href="advisor.html">AI Advisor</a>
+      <a href="performance.html">Performance</a>
+      <a href="ai-chat.html">
+    AI Chat
+</a>
+      <button id="logoutBtn" class="logout-btn">
+      Logout
+      </button>
+    </nav>
+    <div class="auth-context">
+
+    <button id="themeToggle" class="theme-btn">
+        🌙 Dark
+    </button>
+
+</div>
+  </header>
+
+  <main class="dashboard">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="tag">REAL-TIME QUANTITATIVE ENGINE ACTIVE</p>
+        <h1>Institutional Asset Tracking &amp; Accounting Platform</h1>
+        <h3 id="welcome-user" style="color:#00d4ff; margin-top:10px;"></h3>
+        <p class="subtitle">
+          Reconcile fragmented crypto asset positions, handle accounting cost-basis strategies (FIFO/LIFO/HIFO), and evaluate structural portfolio wash-sale compliance using an immutable transactional engine.
+        </p>
+      </div>
+      <div class="coin-container">
+        <div class="coin-orbit">
+          <div class="coin">₿</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="card" id="portfolio-value-card">
+        <p>Total Net Asset Value (NAV)</p>
+        <h2 id="portfolio-value">
+    <div class="skeleton"></div>
+</h2>
+        <span class="indicator text-muted">Calculating aggregate snapshot...</span>
+      </div>
+      <div class="card" id="daily-change-card">
+        <p>24h Delta Variance</p>
+        <h2 id="daily-change"><div class="skeleton"></div></h2>
+        <span class="indicator text-green">0.00%</span>
+      </div>
+      <div class="card" id="profit-loss-card">
+        <p>Aggregate Unrealized P/L</p>
+        <h2 id="unrealized-pl"><div class="skeleton"></div></h2>
+        <span class="indicator text-red">Pending cost-basis run</span>
+      </div>
+      <div class="card warning" id="tax-liability-card">
+        <p>Current Tax Liability Provision</p>
+        <h2 id="estimated-tax"><div class="skeleton"></div></h2>
+        <span id="active-method-indicator">Formula: Unassigned</span>
+      </div>
+    </section>
+
+    <section class="content-split">
+      <div class="portfolio glass">
+
+    <div class="panel-header">
+
+        <h3>Asset Allocation &amp; Lot Balance</h3>
+
+        <button
+            class="btn-sm"
+            id="btn-recalculate-portfolio">
+
+            Force Recalculate Engine
+
+        </button>
+
+    </div>
+
+    <!-- Portfolio Summary -->
+
+    <div class="portfolio-summary">
+
+    <div class="summary-item">
+        <span>Total Assets</span>
+        <h2 id="total-assets">0</h2>
+    </div>
+
+    <div class="summary-item">
+        <span>Largest Holding</span>
+        <h2 id="largest-holding">--</h2>
+    </div>
+
+    <div class="summary-item">
+        <span>Portfolio ROI</span>
+        <h2 id="portfolio-roi">0%</h2>
+    </div>
+
+    <div class="summary-item">
+        <span>Best Performer</span>
+        <h2 id="best-performer">--</h2>
+    </div>
+
+</div>
+
+    <table id="holdings-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Asset</th>
+
+                <th>Balance</th>
+
+                <th>Avg Cost</th>
+
+                <th>Current Price</th>
+
+                <th>Current Value</th>
+
+                <th>Profit / Loss</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr class="placeholder-row">
+
+                <td colspan="6">
+
+                    Loading portfolio...
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+      <aside class="tax glass">
+        <h3>Cost Basis Methodology Strategy</h3>
+        <div class="method-selector" id="tax-method-selector">
+          <div class="method active" data-method="FIFO">
+            <div class="method-meta">
+              <span>First-In, First-Out (FIFO)</span>
+              <p class="desc">Matches oldest available inventory lots first.</p>
+            </div>
+            <strong id="fifo-preview">$0.00</strong>
+          </div>
+
+          <div class="method" data-method="LIFO">
+            <div class="method-meta">
+              <span>Last-In, First-Out (LIFO)</span>
+              <p class="desc">Matches newest acquired asset tranches first.</p>
+            </div>
+            <strong id="lifo-preview">$0.00</strong>
+          </div>
+
+          <div class="method" data-method="HIFO">
+            <div class="method-meta">
+              <span>Highest-In, First-Out (HIFO)</span>
+              <p class="desc">Matches highest acquisition basis lots first to minimize gains.</p>
+            </div>
+            <strong id="hifo-preview">$0.00</strong>
+          </div>
+        </div>
+
+        <div class="risk-panel" id="risk-alert-panel">
+          <h4>Engine Risk Metrics Monitor</h4>
+          <p id="risk-alert-text">No active execution risks identified inside the active historical lot ledger.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="chart glass">
+
+    <h3>Portfolio Allocation</h3>
+
+    <canvas
+        id="portfolioChart"
+        height="120">
+    </canvas>
+
+    </section>
+    <section class="chart glass">
+
+    <h3>Portfolio Performance Trend</h3>
+
+    <canvas
+        id="performanceChart"
+        height="120">
+    </canvas>
+
+  </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
